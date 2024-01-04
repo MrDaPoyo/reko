@@ -23,4 +23,4 @@ def create_profile(sender, instance, created, **kwargs):
         user_profile.save()
 
 post_save.connect(create_profile, sender=User) # When a new user is created, call create_profile
-# https://youtu.be/H8MmNqDyra8?si=lp9AVRKHJp6sJkVv&t=303
+# https://youtu.be/H8MmNqDyra8?si=GBYUTRJDP1OOcH7W&t=488
