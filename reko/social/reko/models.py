@@ -18,6 +18,9 @@ def create_profile(sender, instance, created, **kwargs):
     if created:
         user_profile = Profile(user=instance)
         user_profile.save()
+        # have the user followed themselves
+        user_profile.follows.set([instance.profile.id])
+        user_profile.save()
 
 post_save.connect(create_profile, sender=User) # When a new user is created, call create_profile
 # https://youtu.be/H8MmNqDyra8?si=lp9AVRKHJp6sJkVv&t=303
