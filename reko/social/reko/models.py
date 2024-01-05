@@ -10,6 +10,8 @@ class Profile(models.Model):
         symmetrical=False, # If you follow someone, that someone doesn't have to follow you, right?
         blank=True) # I mean it would be cool if you started following me... <3 see ya there boi / Yeah but you start following nothing...
 
+    date_modified = models.DateTimeField(User, auto_now=True) # When was this profile last modified?
+
     def __str__(self):
         return self.user.username
 
