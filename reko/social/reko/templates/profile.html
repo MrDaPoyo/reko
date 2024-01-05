@@ -12,12 +12,17 @@
 
         <div class="col-4">
             <strong>Follows</strong><br>
-            {% for following in profile.follows.all %}
-            <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
-            {% endfor %}
+            {% if profile.follows.all %}
+                {% for following in profile.follows.all %}
+                <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
+                {% endfor %}
+            {% else %}
+                <p></p>
+            {% endif %}
 
             <br><br>
-
+            
+            
             <strong>Is Followed by</strong><br>
             {% for following in profile.followed_by.all %}
             <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
