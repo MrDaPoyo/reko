@@ -2,6 +2,13 @@
 
 {% block content %}
 
-<h1>Profile</h1>
+{% if profile %}
+
+<h1>{{ profile.user.username }}'s Profile</h1>
+
+<strong>Follows</strong>
+<strong>Id Followed by</strong>
+
+{% endif %}
 
 {% endblock %}
