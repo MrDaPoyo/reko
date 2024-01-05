@@ -10,5 +10,5 @@ def profile_list(request):
         profiles = Profile.objects.exclude(user=request.user)
         return render(request, 'profile_list.html', {"profiles": profiles})
     else:
-        messages.success(request, ('You must to be logged in before trying to make new friends, dude!'))
+        messages.success(request, ('You must to be logged in before trying to view other profiles. Close -> '))
         return redirect('home')
