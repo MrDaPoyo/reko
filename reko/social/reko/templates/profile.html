@@ -21,20 +21,25 @@
                     {% endfor %}
                   
                 </div>
-              </div>
+            </div>
               
 
             <br><br>
             
-            <strong>Is Followed by</strong><br>
-            
-            {% for following in profile.followed_by.all %}
-            <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
-            {% endfor %}
+            <div class="card">
+                <h5 class="card-header">Is Followed By</h5>
+                <div class="card-body">
 
-            {% endif %}
+                    {% for following in profile.followed_by.all %}
+                    <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
+                    {% endfor %}
+                  
+                </div>
+            </div>
 
-            {% endblock %}
+{% endif %}
+
+{% endblock %}
         </div>
     </div>
 </div>
