@@ -17,13 +17,13 @@
                 <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
                 {% endfor %}
             {% else %}
-                <p></p>
+                <p>-No one-</p>
             {% endif %}
 
             <br><br>
             
-            
             <strong>Is Followed by</strong><br>
+            
             {% for following in profile.followed_by.all %}
             <a href="{% url 'profile' following.user.id %}">@{{ following }}</a><br>
             {% endfor %}
