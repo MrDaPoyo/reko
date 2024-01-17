@@ -39,6 +39,13 @@
             <br><br>
             <form method="POST">
                 {% csrf_token %}
+                {if profile in user.follows.all}
+                    <button type="submit" class="btn btn-outline-danger" name="follow" value="unfollow" type="submit">Unfollow</button>
+
+                {% else %}
+                    Follow
+
+                {enfif}
                 
             </form>
         
